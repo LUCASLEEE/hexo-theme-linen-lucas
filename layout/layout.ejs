@@ -1,0 +1,143 @@
+<% 
+const version = theme.version;
+%>
+
+<% 
+  var tocs = is_post() ? extractTocFromHtml(page.content) : null;
+  var series = is_post() ? site.posts.filter(item=>item.series && item.series === page?.series).sort('date', -1) : []
+  var seriesInfo = is_post() && page?.series ? getSeriesInfo(page.series) : {}
+%>
+
+<!DOCTYPE html>
+<html lang="<%=page.language || config.language%>">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1" />
+  <title><%=getPageTitle()%></title>
+  <link rel="icon" type="image/x-icon" href="<%=url_for(theme?.icon ?? '/linen-theme/favicon.svg')%>" />
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <% if (page.hide && page.hide.seo) { %>
+  <meta name="robots" content="noindex, nofollow">
+  <% } %>
+  <meta name="description" content="<%=page?.excerpt||config?.description||''%>" />
+  <%-partial('partials/share-meta')%> <% if (theme.stylesheets !== undefined
+    && theme.stylesheets.length > 0) { %>
+  <% if (is_post()) { %>
+  <link rel="stylesheet" href="<%=url_for(`/linen-theme/css/linkcard.css?v=${version}`)%>" />
+  <% } %>
+  <!-- stylesheets list from _config.yml -->
+  <% theme.stylesheets.forEach(url => { %>
+  <link rel="stylesheet" href="<%=url_for(`${url}?v=${version}`)%>" />
+  <% }); %> <% } %>
+  <% if (theme?.lazyload?.enable ?? true) { %>
+  <link rel="stylesheet" href="<%=url_for(`/linen-theme/css/lazyload.css?v=${version}`)%>" />
+  <% } %>
+  <% if (theme?.heads) { %>
+  <% theme?.heads.forEach(head => { %>
+  <%-head%>
+  <% }); %>
+  <% } %>
+  <% if (page?.heads) { %>
+  <% page.heads.forEach(head => { %>
+  <%-head%>
+  <% }); %>
+  <% } %>
+</head>
+
+<body class="<%- is_post() ? 'is-post' : '' %>">
+  <div id=" "></div>
+  <div id="page-top"></div>
+  <%-partial('partials/header', {
+      hasTocs: page?.toc ?? !!tocs?.length
+    })%> <% if (is_post()) { %>
+  <div class="banner-bg"></div>
+  <% } %>
+  <div id="safe-area-test" style="position: fixed; bottom: 0; height: env(safe-area-inset-bottom);"></div>
+  <div class="page-body">
+    <div class="side-content">
+      <% if (page?.toc !== false && tocs?.length) { %>
+      <div id="toc" class="toc<%=page.tocType === 'flat' ? ' flat' : ''%>">
+        <div class="toc-title"></div>
+        <div class="toc-items">
+          <% tocs.forEach((toc, index) => { %>
+          <div class="toc-item-wrap<%-index ===0 ? ' active': ''%>">
+            <a class="toc-item-link" data-id="<%-toc.id%>" href="#<%-toc.id%>"><%-toc.title%></a>
+            <% if(toc?.children?.length) { %>
+            <ul class="toc-sub-item-wrap">
+              <% toc.children.forEach(subItem => { %>
+              <li><a class="toc-sub-item-link" data-id="<%-subItem.id%>" href="#<%-subItem.id%>"><%-subItem.title%></a></li>
+              <% }); %>
+            </ul>
+            <% }; %>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+      <% } %>
+    </div>
+    <div class="side-content">
+      <% if (series.length) { %>
+      <div class="post-series">
+        <a class="series-title" href="<%=url_for(`/series/${page.series}/`)%>"><%=page.series%></a>
+        <div class="series-items">
+          <%
+          let currentSeriesYear = null;
+          take(series, 50).forEach((item, index) => {
+            const itemYear = item.date?.year ? item.date.year() : new Date(item.date).getFullYear();
+            const showYearDivider = seriesInfo?.yearDivider && itemYear && itemYear !== currentSeriesYear;
+            if (showYearDivider) {
+              currentSeriesYear = itemYear;
+            }
+          %>
+          <% if (showYearDivider) { %>
+          <div class="series-year-divider<%-itemYear === page?.date?.year() ? ' active': ''%>"><%=itemYear%></div>
+          <% } %>
+          <a class="series-item-link<%-item.source === page.source ? ' active': ''%>" href="<%=url_for(item.path)%>"><%-`${item.title}`%><% if (item.subTitle) { %><span class="sub-title"><%=item.subTitle%></span><% } %></a>
+          <% }); %>
+          <% if(series.length > 50) { %>
+          <a class="series-item-link view-more" href="<%=url_for(`/series/${page.series}/`)%>"><%-`${__('common.total')} ${series.length} ${__('common.seriesPostCountShort')}`%></a>
+          <% } %>
+        </div>
+      </div>
+      <% } %>
+    </div>
+    <div id="content-outer" class="<%= is_post() ? 'post-outer' : page.seriesInfo?.cover ? 'series-outer': '' %>">
+      <main id="content-inner" class="content-inner">
+        <%- body %>
+      </main>
+    </div>
+  </div>
+
+  <%-partial('footer')%>
+  <div id="mask"></div>
+  <a id="back-to-top" href="# " title="back to top"></a>
+  <noscript id="noscript-styles"></noscript>
+  <% if(is_post()) { %>
+  <script src="<%=url_for(`/linen-theme/js/toc.js?v=${version}`)%>" defer></script>
+  <% } %>
+  <% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
+  <!-- scripts list from theme config.yml -->
+  <% theme.scripts.forEach(url => { %>
+  <script src="<%=url_for(`${url}?v=${version}`)%>"></script>
+  <% }); %>
+  <% } %>
+  <% if (page.hdrAssetsPrefix) { %>
+  <script>
+    var hdrAssetsPrefix = "<%-page.hdrAssetsPrefix%>"
+  </script>
+  <% } %>
+  <% if (page.hdrSwitch) { %>
+  <script src="<%=url_for(`/linen-theme/js/hdr.js?v=${version}`)%>"></script>
+  <% } %>
+  <% if (theme?.lazyload?.enable ?? true) { %>
+  <script src="<%=url_for(`/linen-theme/js/lazyload.js?v=${version}`)%>"></script>
+  <% } %>
+  <% if (theme?.appends?.length > 0) { %>
+  <% theme.appends.forEach(appendItem => { %>
+  <%-appendItem%>
+  <% }); %>
+  <% } %>
+</body>
+
+</html>

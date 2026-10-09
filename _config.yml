@@ -1,0 +1,8 @@
+stylesheets:
+- /linen-theme/css/linen.css
+
+scripts:
+- /linen-theme/js/linen.js
+
+sass:
+  outputStyle: compressed
