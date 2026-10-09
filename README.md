@@ -1,4 +1,4 @@
-# hexo-theme-linen
+# hexo-theme-linen-lucas
 
 一个干净、克制的 Hexo 主题，专注阅读体验与极简配置。
 
@@ -20,15 +20,15 @@
 ### 方式一：npm（推荐）
 
 ```bash
-pnpm add hexo-theme-linen
+pnpm add hexo-theme-linen-lucas
 # 或
-npm install hexo-theme-linen
+npm install hexo-theme-linen-lucas
 ```
 
 ### 方式二：克隆到主题目录
 
 ```bash
-git clone https://github.com/LUCASLEEE/hexo-theme-linen.git themes/linen
+git clone https://github.com/LUCASLEEE/hexo-theme-linen-lucas.git themes/linen
 ```
 
 ## 使用
