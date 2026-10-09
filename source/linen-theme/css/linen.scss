@@ -3702,3 +3702,54 @@ ul {
     }
   }
 }
+
+/* ── 系列导航（文章底部的「上一篇 / 下一篇」）──
+   宽屏下「上一篇 / 下一篇」左右并排，沿用主题原有布局；
+   窄屏下标题会换行，指示文字原本绝对定位在标题上方，容易与标题、
+   副标题互相挤压，因此在这里改为上下堆叠、指示文字独立成行。 */
+@media (max-width: 768px) {
+  .series-nav {
+    .post-nav-wrap {
+      .post-nav {
+        display: block;
+
+        .post-nav-item {
+          display: block;
+          position: relative;
+          width: 100%;
+          padding-top: 1.5em;
+          line-height: 1.6;
+
+          & + .post-nav-item {
+            margin-top: 0.6em;
+          }
+
+          .nav-indicator-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: none;
+            margin: 0;
+            opacity: 0.85;
+          }
+
+          .sub-title {
+            margin-left: 0.4em;
+            align-self: baseline;
+            margin-bottom: 0;
+          }
+
+          &.next {
+            margin-left: 0;
+            text-align: right;
+          }
+
+          &.next .nav-indicator-text {
+            left: unset;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}
