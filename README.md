@@ -12,6 +12,7 @@
 - 响应式布局，移动端友好
 - 支持归档、分类、标签、系列
 - 内置目录、图片懒加载、图片点击放大（PhotoSwipe）
+- **内置明暗主题**，默认跟随系统，顶栏可一键切换
 - 不依赖额外插件，构建快、体积小
 
 ## 安装
@@ -75,6 +76,31 @@ photoswipe: true
 hexo clean && hexo serve
 ```
 
+## 明暗主题
+
+主题默认**跟随系统的浅色/深色设置**，顶栏最右侧有一个切换按钮，点一下在
+「跟随系统 → 浅色 → 深色」之间循环，读者的选择会记在浏览器本地。
+
+在 `_config.linen.yml` 里可以调整：
+
+```yaml
+themeMode:
+  enable: true      # 设为 false 可完全关闭该功能
+  default: auto     # auto 跟随系统 / light 始终浅色 / dark 始终深色
+```
+
+实现说明：
+
+| 文件 | 作用 |
+| --- | --- |
+| `source/linen-theme/css/theme-dark.css` | 深色配色（顶栏、页脚、卡片、归档页、目录、代码块、表格、引用、相关文章、图片全屏查看） |
+| `source/linen-theme/css/theme-toggle.css` | 切换按钮样式（浅色/深色都要显示，所以单独一个文件） |
+| `source/linen-theme/js/theme-boot.js` | 页面渲染前就定好主题，避免刷新时闪白 |
+| `source/linen-theme/js/theme-toggle.js` | 按钮交互与系统主题变化的响应 |
+
+深色样式是**独立文件、不改动原有样式**，升级主题时不会互相覆盖。
+要改深色下的配色，直接改 `theme-dark.css` 里的色值即可。
+
 ## 文章可用的字段
 
 | 字段 | 作用 |
@@ -93,7 +119,7 @@ hexo clean && hexo serve
 .
 ├── layout/           # EJS 模板
 ├── scripts/          # Hexo 扩展（生成器、过滤器等）
-├── source/linen-theme/  # 静态资源（CSS / JS / 字体 / 图标）
+├── source/linen-theme/  # 静态资源（CSS / JS / 字体 / 图标，含明暗主题）
 ├── languages/        # 多语言文案
 ├── _config.yml       # 主题默认配置
 └── index.js          # 主题入口

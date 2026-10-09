@@ -32,6 +32,9 @@ const rssPath = config?.feed?.path || theme?.feed?.path;
         <% if (rssPath) { %>
           <a class="button rss" href="<%=url_for(rssPath)%>" target="_blank" title="rss"></a>
         <% } %>
+        <% if (theme?.themeMode?.enable !== false) { %>
+        <button id="theme-toggle" class="button theme-toggle" type="button" data-mode="<%=theme?.themeMode?.default || 'auto'%>" aria-label="切换明暗主题" title="切换明暗主题"></button>
+        <% } %>
         <% if (hasTocs) { %>
         <div id="toc-toggle" class="button toc"></div>
         <% } %>

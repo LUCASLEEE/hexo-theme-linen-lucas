@@ -6,3 +6,13 @@ scripts:
 
 sass:
   outputStyle: compressed
+
+# 明暗主题
+# auto   —— 跟随系统设置（默认）
+# light  —— 始终浅色
+# dark   —— 始终深色
+# 顶栏最右侧会显示一个切换按钮，在「跟随系统 → 浅色 → 深色」之间循环，
+# 读者的选择会记在浏览器本地；设为 false 可完全关闭该功能。
+themeMode:
+  enable: true
+  default: auto

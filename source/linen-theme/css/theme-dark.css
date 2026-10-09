@@ -1,0 +1,548 @@
+/* 深色模式：由 html[data-theme="dark"] 驱动，跟随系统或手动切换 */
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+html[data-theme="dark"] body {
+  background-color: #121212;
+  color: #c9c9c9;
+}
+
+/* 顶栏 */
+html[data-theme="dark"] .nav-header,
+html[data-theme="dark"] .nav-header-pleaceholder {
+  background-color: #121212;
+}
+html[data-theme="dark"] .nav-header .header-inner {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+html[data-theme="dark"] .nav-header .header-inner .title {
+  color: #ececec;
+}
+html[data-theme="dark"] .nav-header .right .navItems .navItem {
+  color: #b4b4b4;
+}
+html[data-theme="dark"] .nav-header .right .navItems .navItem.active {
+  color: #ececec;
+}
+/* 图标是深色描边，深色底上反相显示 */
+html[data-theme="dark"] .nav-header .right .buttonSet .button,
+html[data-theme="dark"] #back-to-top {
+  filter: invert(1) brightness(1.6);
+}
+
+/* 主体与卡片 */
+html[data-theme="dark"] .content-inner,
+html[data-theme="dark"] .section-title,
+html[data-theme="dark"] #top-posts .post-item,
+html[data-theme="dark"] #recent-posts .post-item,
+html[data-theme="dark"] #archive .post-item,
+html[data-theme="dark"] .posts-info-layout .info-wrap .site-info,
+html[data-theme="dark"] #footer {
+  background-color: #121212;
+}
+html[data-theme="dark"] .section-title {
+  color: #cfcfcf;
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+html[data-theme="dark"] #footer {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+html[data-theme="dark"] .posts-info-layout .info-wrap .site-info,
+html[data-theme="dark"] #recent-posts .post-item,
+html[data-theme="dark"] #archive .post-item {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+html[data-theme="dark"] #top-posts .post-item .cover-img,
+html[data-theme="dark"] #recent-posts .post-item .cover-img,
+html[data-theme="dark"] #archive .post-item .cover-img {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* 文字 */
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6,
+html[data-theme="dark"] #top-posts .post-item .title,
+html[data-theme="dark"] #recent-posts .post-item .title,
+html[data-theme="dark"] #archive .post-item .title,
+html[data-theme="dark"] .posts-info-layout .info-wrap .site-info .info-row .site-name,
+html[data-theme="dark"] .posts-info-layout .info-wrap .site-info .info-row.description,
+html[data-theme="dark"] #footer .footerLinkCol h4,
+html[data-theme="dark"] .post-series .series-title,
+html[data-theme="dark"] #toc .toc-title,
+html[data-theme="dark"] #toc .toc-item-wrap .toc-item-link.active,
+html[data-theme="dark"] .related-posts-title {
+  color: #ececec;
+}
+html[data-theme="dark"] .excerpt,
+html[data-theme="dark"] #top-posts .post-item .excerpt,
+html[data-theme="dark"] #recent-posts .post-item .excerpt,
+html[data-theme="dark"] #archive .post-item .excerpt,
+html[data-theme="dark"] .post-meta,
+html[data-theme="dark"] #footer .footerLinkCol a,
+html[data-theme="dark"] .series-layout .series-description,
+html[data-theme="dark"] #toc .toc-item-wrap .toc-item-link {
+  color: #adadad;
+}
+html[data-theme="dark"] .sub-title,
+html[data-theme="dark"] .read-time,
+html[data-theme="dark"] #footer .footerBrand .footerDesc,
+html[data-theme="dark"] #footer .footerLinkCol.footerMetaCol .footerMetaText,
+html[data-theme="dark"] .posts-info-layout .info-wrap .site-info .description.description,
+html[data-theme="dark"] .posts-info-layout .info-wrap .site-info .site-statisc.site-statisc a {
+  color: #8f8f8f;
+}
+html[data-theme="dark"] a,
+html[data-theme="dark"] .page-content a,
+html[data-theme="dark"] #toc .toc-item-wrap .toc-sub-item-wrap .toc-sub-item-link {
+  color: #7fb2ff;
+}
+
+/* 标签、归档 */
+html[data-theme="dark"] .tag-item,
+html[data-theme="dark"] #recent-posts .post-item .tags .tag-item,
+html[data-theme="dark"] .archive-list-count {
+  background-color: #232323;
+  color: #b0b0b0;
+}
+html[data-theme="dark"] .archive-list-link {
+  border-bottom-color: #2a2a2a;
+}
+html[data-theme="dark"] #paginator a,
+html[data-theme="dark"] #paginator span {
+  background-color: #191919;
+  color: #b0b0b0;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+html[data-theme="dark"] #paginator a:hover,
+html[data-theme="dark"] #paginator span:hover {
+  background-color: #232323;
+  color: #ececec;
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* 正文元素 */
+html[data-theme="dark"] #content-outer.post-outer .content-inner,
+html[data-theme="dark"] #content-outer.post-outer .content-inner #post,
+html[data-theme="dark"] #content-outer.post-outer .content-inner #raw-markdown-block,
+html[data-theme="dark"] #post,
+html[data-theme="dark"] #raw-markdown-block {
+  background-color: #121212;
+  color: #c9c9c9;
+}
+html[data-theme="dark"] #post .post-meta,
+html[data-theme="dark"] #raw-markdown-block .post-meta,
+html[data-theme="dark"] #post-age-warning {
+  color: #8f8f8f;
+}
+html[data-theme="dark"] #post .attachment-item .attachment-size {
+  color: #c9c9c9;
+}
+html[data-theme="dark"] #post .message .message-body,
+html[data-theme="dark"] #raw-markdown-block .message .message-body {
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #c9c9c9;
+}
+/* 正文里的链接：主题用深绿色，深色底上换成浅绿 */
+html[data-theme="dark"] #post a:not([class]),
+html[data-theme="dark"] #raw-markdown-block a:not([class]) {
+  color: #6ecb72;
+}
+html[data-theme="dark"] #post table th,
+html[data-theme="dark"] #raw-markdown-block table th {
+  color: #e0e0e0;
+}
+/* 文章顶部横幅的装饰底图是浅色图案，深色模式下换成纯色 */
+html[data-theme="dark"] .banner-bg {
+  background-color: #121212;
+  background-image: none;
+}
+html[data-theme="dark"] .banner-bg::after {
+  background-image: linear-gradient(to bottom, rgba(18, 18, 18, 0), rgb(18, 18, 18));
+}
+html[data-theme="dark"] hr,
+html[data-theme="dark"] #post hr,
+html[data-theme="dark"] #raw-markdown-block hr {
+  background-color: #2a2a2a;
+}
+html[data-theme="dark"] #post blockquote,
+html[data-theme="dark"] #raw-markdown-block blockquote {
+  background-color: #1c1c1c;
+  border-left-color: #3a3a3a;
+  color: #c9c9c9;
+}
+html[data-theme="dark"] #post .message,
+html[data-theme="dark"] #raw-markdown-block .message,
+html[data-theme="dark"] #post .new-updates,
+html[data-theme="dark"] #raw-markdown-block .new-updates,
+html[data-theme="dark"] #post-age-warning {
+  background-color: #1c1c1c;
+}
+html[data-theme="dark"] table {
+  border-color: #333333;
+}
+html[data-theme="dark"] table th:not(:last-child) {
+  border-right-color: #333333;
+}
+html[data-theme="dark"] table th,
+html[data-theme="dark"] table th:not(:last-child),
+html[data-theme="dark"] #post table,
+html[data-theme="dark"] #raw-markdown-block table,
+html[data-theme="dark"] #post table thead tr,
+html[data-theme="dark"] #raw-markdown-block table thead tr,
+html[data-theme="dark"] #post table tr:nth-child(even),
+html[data-theme="dark"] #raw-markdown-block table tr:nth-child(even) {
+  color: #e0e0e0;
+  border-color: #333333;
+  background-color: #1a1a1a;
+}
+html[data-theme="dark"] #post table thead tr,
+html[data-theme="dark"] #raw-markdown-block table thead tr {
+  background-color: #232323;
+}
+html[data-theme="dark"] code,
+html[data-theme="dark"] #post code,
+html[data-theme="dark"] #raw-markdown-block code {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #e6e6e6;
+}
+html[data-theme="dark"] span.code {
+  color: #e6e6e6;
+}
+html[data-theme="dark"] #post .tags .tag-item,
+html[data-theme="dark"] #raw-markdown-block .tags .tag-item {
+  background-color: #232323;
+  color: #b0b0b0;
+}
+/* 代码块：换成 GitHub Dark 配色 */
+html[data-theme="dark"] #post figure.highlight,
+html[data-theme="dark"] #raw-markdown-block figure.highlight {
+  background-color: #161b22;
+  color: #c9d1d9;
+}
+html[data-theme="dark"] #post figure.highlight .line,
+html[data-theme="dark"] #post figure.highlight span.code,
+html[data-theme="dark"] #post figure.highlight .subst,
+html[data-theme="dark"] #post figure.highlight .emphasis,
+html[data-theme="dark"] #post figure.highlight .strong,
+html[data-theme="dark"] #raw-markdown-block figure.highlight span {
+  color: #c9d1d9;
+}
+html[data-theme="dark"] #post figure.highlight figcaption,
+html[data-theme="dark"] #raw-markdown-block figure.highlight figcaption {
+  color: #9aa4b2;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+html[data-theme="dark"] #post figure.highlight .gutter .line,
+html[data-theme="dark"] #raw-markdown-block figure.highlight .gutter .line {
+  color: #6b7280;
+}
+html[data-theme="dark"] #post figure.highlight .copy-btn,
+html[data-theme="dark"] #raw-markdown-block figure.highlight .copy-btn {
+  background-color: #21262d;
+  filter: invert(1) brightness(1.4);
+}
+html[data-theme="dark"] #post figure.highlight .fold-toggle,
+html[data-theme="dark"] #raw-markdown-block figure.highlight .fold-toggle {
+  background-color: #161b22;
+  filter: invert(1) brightness(1.4);
+}
+html[data-theme="dark"] #post figure.highlight .fold-toggle::before {
+  background-image: linear-gradient(to bottom, rgba(22, 27, 34, 0), rgb(22, 27, 34));
+}
+html[data-theme="dark"] #post figure.highlight .keyword,
+html[data-theme="dark"] #post figure.highlight .doctag,
+html[data-theme="dark"] #raw-markdown-block figure.highlight .keyword {
+  color: #ff7b72;
+}
+html[data-theme="dark"] #post figure.highlight .title,
+html[data-theme="dark"] #post figure.highlight .title.class_ {
+  color: #d2a8ff;
+}
+html[data-theme="dark"] #post figure.highlight .attr,
+html[data-theme="dark"] #post figure.highlight .attribute,
+html[data-theme="dark"] #post figure.highlight .literal,
+html[data-theme="dark"] #post figure.highlight .section,
+html[data-theme="dark"] #raw-markdown-block figure.highlight .attr {
+  color: #79c0ff;
+}
+html[data-theme="dark"] #post figure.highlight .regexp,
+html[data-theme="dark"] #post figure.highlight .string,
+html[data-theme="dark"] #post figure.highlight .meta .string {
+  color: #a5d6ff;
+}
+html[data-theme="dark"] #post figure.highlight .built_in,
+html[data-theme="dark"] #post figure.highlight .symbol {
+  color: #ffa657;
+}
+html[data-theme="dark"] #post figure.highlight .comment,
+html[data-theme="dark"] #post figure.highlight .code,
+html[data-theme="dark"] #post figure.highlight .formula {
+  color: #8b949e;
+}
+html[data-theme="dark"] #post figure.highlight .name,
+html[data-theme="dark"] #post figure.highlight .quote,
+html[data-theme="dark"] #post figure.highlight .selector-tag {
+  color: #7ee787;
+}
+html[data-theme="dark"] #post figure.highlight .bullet {
+  color: #e3b341;
+}
+html[data-theme="dark"] #post figure.highlight .addition {
+  color: #aff5b4;
+  background-color: rgba(46, 160, 67, 0.15);
+}
+html[data-theme="dark"] #post figure.highlight .deletion {
+  color: #ffdcd7;
+  background-color: rgba(248, 81, 73, 0.15);
+}
+
+/* 封面与图片占位 */
+/* 独立页面（#page）的正文元素 */
+html[data-theme="dark"] #page table {
+  border-color: #333333;
+}
+html[data-theme="dark"] #page table td:not(:last-child),
+html[data-theme="dark"] #page table th:not(:last-child) {
+  border-right-color: #333333;
+}
+html[data-theme="dark"] #page table th {
+  color: #e0e0e0;
+  border-bottom-color: #333333;
+}
+html[data-theme="dark"] #page table thead tr {
+  background-color: #232323;
+}
+html[data-theme="dark"] #page table tr:nth-child(even) {
+  background-color: #1a1a1a;
+}
+html[data-theme="dark"] #page figure.highlight {
+  background-color: #161b22;
+  color: #c9d1d9;
+}
+html[data-theme="dark"] #page figure.highlight .line,
+html[data-theme="dark"] #page figure.highlight span.code {
+  color: #c9d1d9;
+}
+html[data-theme="dark"] #page figure.highlight .string {
+  color: #a5d6ff;
+}
+html[data-theme="dark"] #page figure.highlight .comment {
+  color: #8b949e;
+}
+html[data-theme="dark"] #page figure.highlight .gutter .line {
+  color: #6b7280;
+}
+html[data-theme="dark"] #page figure.highlight table,
+html[data-theme="dark"] #page figure.highlight thead tr,
+html[data-theme="dark"] #page figure.highlight tr:nth-child(even),
+html[data-theme="dark"] #page figure.highlight td,
+html[data-theme="dark"] #page figure.highlight th {
+  border: none;
+  background-color: transparent;
+}
+html[data-theme="dark"] #page blockquote {
+  background-color: #1c1c1c;
+  border-left-color: #3a3a3a;
+  color: #c9c9c9;
+}
+html[data-theme="dark"] #page hr {
+  background-color: #2a2a2a;
+}
+html[data-theme="dark"] #page code {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #e6e6e6;
+}
+html[data-theme="dark"] #page a {
+  color: #7fb2ff;
+}
+
+/* ── 归档页（/archives/）── */
+html[data-theme="dark"] #archive h2 {
+  color: #ececec;
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+html[data-theme="dark"] #archive a,
+html[data-theme="dark"] #archive a:visited,
+html[data-theme="dark"] #archive .archive-list .archive-list-item .archive-list-link {
+  color: #c9c9c9;
+}
+html[data-theme="dark"] #archive .archive-list .archive-list-item:hover {
+  background-color: #1a1a1a;
+  border-color: transparent;
+}
+html[data-theme="dark"] #archive .archive-list .archive-list-item .archive-list-link:hover {
+  color: #6ecb72;
+}
+html[data-theme="dark"] #archive .archive-list .archive-list-count {
+  background-color: #232323;
+  color: #b0b0b0;
+}
+html[data-theme="dark"] #archive .tag-list .tag-list-item {
+  background-color: #232323;
+}
+html[data-theme="dark"] #archive .tag-list .tag-list-item:hover {
+  background-color: #2d2d2d;
+}
+html[data-theme="dark"] #archive .tag-list .tag-list-item .tag-list-link {
+  color: #cfcfcf;
+}
+
+html[data-theme="dark"] .post-cover-img-wrap,
+html[data-theme="dark"] .series-cover-img-wrap {
+  background-color: #121212;
+}
+html[data-theme="dark"] .post-cover-img-wrap::before,
+html[data-theme="dark"] .post-cover-img-wrap::after,
+html[data-theme="dark"] .series-cover-img-wrap::before,
+html[data-theme="dark"] .series-cover-img-wrap::after {
+  background-color: #121212;
+}
+html[data-theme="dark"] .lazyload-wrap .placeholder,
+html[data-theme="dark"] .lazyload-wrap .error-wrap {
+  background-color: #1b1b1b;
+}
+
+/* 侧栏与系列 */
+html[data-theme="dark"] #toc {
+  background-color: rgba(18, 18, 18, 0.9);
+}
+html[data-theme="dark"] #toc::after {
+  background-color: #232323;
+}
+html[data-theme="dark"] .series-nav,
+html[data-theme="dark"] .series-nav .series-popup {
+  background-color: #1c1c1c;
+}
+html[data-theme="dark"] .series-nav .series-name,
+html[data-theme="dark"] .series-nav .series-popup .series-items .series-item-link {
+  color: #b0b0b0;
+}
+html[data-theme="dark"] .post-series .series-items .series-item-link {
+  color: #c3c3c3;
+}
+
+/* 明暗切换按钮 */
+.nav-header .right .buttonSet .button.theme-toggle {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.button.theme-toggle[data-mode="auto"] {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='9' fill='none' stroke='%23232323' stroke-width='1.8'/%3E%3Cpath fill='%23232323' d='M12 3a9 9 0 0 0 0 18z'/%3E%3C/svg%3E");
+}
+.button.theme-toggle[data-mode="light"] {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23232323' stroke-width='1.8' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Cpath d='M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6'/%3E%3C/svg%3E");
+}
+.button.theme-toggle[data-mode="dark"] {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23232323' d='M20.6 15.1A8.7 8.7 0 0 1 9.3 3.8a8.8 8.8 0 1 0 11.3 11.3z'/%3E%3C/svg%3E");
+}
+
+/* ── 相关文章：主题用的是 `#related-posts ...` 这种带 id 的选择器，
+      权重高于 `html[data-theme="dark"] .xxx`，所以这里必须同样带上 id 才盖得住 ── */
+html[data-theme="dark"] #related-posts {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+html[data-theme="dark"] #related-posts .related-posts-title {
+  color: #ececec;
+}
+html[data-theme="dark"] #related-posts .shared-link {
+  background-color: #191919;
+}
+html[data-theme="dark"] #related-posts .shared-link .link-title {
+  color: #ececec;
+}
+html[data-theme="dark"] #related-posts .shared-link .link-desc {
+  color: #a8a8a8;
+}
+html[data-theme="dark"] #related-posts .shared-link .cover-img {
+  background-color: #232323;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* 列表卡片里的时间与分类 */
+html[data-theme="dark"] #top-posts .post-item .post-meta,
+html[data-theme="dark"] #top-posts .post-item .post-meta .date,
+html[data-theme="dark"] #top-posts .post-item .post-meta .categories .category-item,
+html[data-theme="dark"] #recent-posts .post-item .post-meta,
+html[data-theme="dark"] #recent-posts .post-item .post-meta .date,
+html[data-theme="dark"] #recent-posts .post-item .post-meta .categories .category-item,
+html[data-theme="dark"] #archive .post-item .post-meta,
+html[data-theme="dark"] #archive .post-item .post-meta .date,
+html[data-theme="dark"] #archive .post-item .post-meta .categories .category-item {
+  color: #a0a0a0;
+}
+
+/* 代码行号在深色底上提亮一点 */
+html[data-theme="dark"] #page figure.highlight .gutter .line,
+html[data-theme="dark"] #post figure.highlight .gutter .line,
+html[data-theme="dark"] #raw-markdown-block figure.highlight .gutter .line {
+  color: #7f8894;
+}
+
+/* 相关文章卡片来自 linkcard.css：内容区是白色渐变 + 白色文字阴影，深色下要一并覆盖 */
+html[data-theme="dark"] #related-posts .shared-link {
+  box-shadow: rgba(0, 0, 0, 0.35) 0 8px 24px;
+}
+html[data-theme="dark"] #related-posts .shared-link .link-content {
+  background-image: linear-gradient(
+    to right,
+    #191919,
+    rgba(25, 25, 25, 0.94),
+    rgba(25, 25, 25, 0.9),
+    rgba(25, 25, 25, 0.4)
+  );
+}
+html[data-theme="dark"] #related-posts .shared-link .link-title,
+html[data-theme="dark"] #related-posts .shared-link .link-desc {
+  text-shadow: none;
+}
+html[data-theme="dark"] #related-posts .shared-link:hover {
+  box-shadow: rgba(0, 0, 0, 0.5) 0 8px 24px;
+}
+
+/* 图片下方的说明文字（lazyload caption） */
+html[data-theme="dark"] .lazyload-outer-wrap .caption {
+  color: #9a9a9a;
+}
+
+/* 图片全屏查看（PhotoSwipe）：主题默认用白色背景，深色模式下改成深色 */
+html[data-theme="dark"] .pswp {
+  --pswp-bg: #101010;
+  --pswp-placeholder-bg: #1c1c1c;
+  --pswp-icon-color: #f0f0f0;
+  --pswp-icon-color-secondary: #8a8a8a;
+  --pswp-icon-stroke-color: #8a8a8a;
+  --pswp-preloader-color: rgba(160, 160, 160, 0.4);
+  --pswp-preloader-color-secondary: rgba(240, 240, 240, 0.9);
+}
+html[data-theme="dark"] .pswp__counter,
+html[data-theme="dark"] .pswp__caption,
+html[data-theme="dark"] .pswp__caption__center,
+html[data-theme="dark"] .pswp__custom-caption,
+html[data-theme="dark"] .pswp__dynamic-caption {
+  color: #e6e6e6;
+  text-shadow: none;
+}
+html[data-theme="dark"] .pswp__custom-caption a {
+  color: #7fb2ff;
+}
+html[data-theme="dark"] .pswp__button {
+  filter: invert(1) brightness(1.5);
+}
+
+/* 站点信息卡里统计数字之间的分隔符 */
+html[data-theme="dark"] .posts-info-layout .info-wrap .site-info .site-statisc .divider,
+html[data-theme="dark"] .posts-info-layout .info-wrap .site-info .info-row.site-statisc .divider {
+  color: rgba(255, 255, 255, 0.22);
+}

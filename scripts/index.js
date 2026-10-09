@@ -5,6 +5,7 @@ require("./custom")(hexo);
 require("./hoverTexts")(hexo);
 require("./helpers/tools")(hexo);
 require("./font-version")(hexo);
+require("./theme-version")(hexo);
 require("./footnote")(hexo);
 require("./appendRawMarkdownContent")(hexo); 
 require("./addCopyButtonToCodeBlocks")(hexo);

@@ -9,7 +9,7 @@ const version = theme.version;
 %>
 
 <!DOCTYPE html>
-<html lang="<%=page.language || config.language%>">
+<html lang="<%=page.language || config.language%>"<% if (theme?.themeMode?.enable !== false) { %> data-theme-default="<%=theme?.themeMode?.default || 'auto'%>"<% } %>>
 
 <head>
   <meta charset="UTF-8" />
@@ -32,6 +32,11 @@ const version = theme.version;
   <% }); %> <% } %>
   <% if (theme?.lazyload?.enable ?? true) { %>
   <link rel="stylesheet" href="<%=url_for(`/linen-theme/css/lazyload.css?v=${version}`)%>" />
+  <% } %>
+  <% if (theme?.themeMode?.enable !== false) { %>
+  <script src="<%=url_for(`/linen-theme/js/theme-boot.js?v=${version}`)%>"></script>
+  <link rel="stylesheet" href="<%=url_for(`/linen-theme/css/theme-toggle.css?v=${version}`)%>" />
+  <link rel="stylesheet" href="<%=url_for(`/linen-theme/css/theme-dark.css?v=${version}`)%>" />
   <% } %>
   <% if (theme?.heads) { %>
   <% theme?.heads.forEach(head => { %>
@@ -132,6 +137,9 @@ const version = theme.version;
   <% } %>
   <% if (theme?.lazyload?.enable ?? true) { %>
   <script src="<%=url_for(`/linen-theme/js/lazyload.js?v=${version}`)%>"></script>
+  <% } %>
+  <% if (theme?.themeMode?.enable !== false) { %>
+  <script src="<%=url_for(`/linen-theme/js/theme-toggle.js?v=${version}`)%>" defer></script>
   <% } %>
   <% if (theme?.appends?.length > 0) { %>
   <% theme.appends.forEach(appendItem => { %>
