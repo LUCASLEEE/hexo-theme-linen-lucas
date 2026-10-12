@@ -11,7 +11,7 @@
         <div class="footerLinkCol">
           <h4><%= __('common.navigation') %></h4>
           <% if (theme?.navItems) { %>
-            <% theme.navItems.forEach(item => { %>
+            <% theme.navItems.filter(item => !['/explorers-guide', '/explorers-guide/'].includes(item.path)).forEach(item => { %>
               <a href="<%=url_for(item.path)%>"><%=item.name%></a>
             <% }); %>
           <% } %>
