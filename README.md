@@ -28,7 +28,7 @@ npm install hexo-theme-linen-lucas
 ### 方式二：克隆到主题目录
 
 ```bash
-git clone https://github.com/LUCASLEEE/hexo-theme-linen-lucas.git themes/linen
+git clone https://github.com/lucaslee1213/hexo-theme-linen-lucas.git themes/linen
 ```
 
 ## 使用
