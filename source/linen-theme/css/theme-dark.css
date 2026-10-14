@@ -242,9 +242,15 @@ html[data-theme="dark"] #raw-markdown-block figure.highlight .gutter .line {
   color: #6b7280;
 }
 html[data-theme="dark"] #post figure.highlight .copy-btn,
-html[data-theme="dark"] #raw-markdown-block figure.highlight .copy-btn {
+html[data-theme="dark"] #raw-markdown-block figure.highlight .copy-btn,
+html[data-theme="dark"] #page figure.highlight .copy-btn {
   background-color: #21262d;
-  filter: invert(1) brightness(1.4);
+  filter: none;
+}
+html[data-theme="dark"] #post figure.highlight .copy-btn:hover,
+html[data-theme="dark"] #raw-markdown-block figure.highlight .copy-btn:hover,
+html[data-theme="dark"] #page figure.highlight .copy-btn:hover {
+  background-color: #30363d;
 }
 html[data-theme="dark"] #post figure.highlight .fold-toggle,
 html[data-theme="dark"] #raw-markdown-block figure.highlight .fold-toggle {
