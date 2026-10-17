@@ -244,13 +244,14 @@ html[data-theme="dark"] #raw-markdown-block figure.highlight .gutter .line {
 html[data-theme="dark"] #post figure.highlight .copy-btn,
 html[data-theme="dark"] #raw-markdown-block figure.highlight .copy-btn,
 html[data-theme="dark"] #page figure.highlight .copy-btn {
-  background-color: #21262d;
+  /* 与代码块融为一体，避免深色模式出现突兀的按钮底色。 */
+  background-color: transparent;
   filter: none;
 }
 html[data-theme="dark"] #post figure.highlight .copy-btn:hover,
 html[data-theme="dark"] #raw-markdown-block figure.highlight .copy-btn:hover,
 html[data-theme="dark"] #page figure.highlight .copy-btn:hover {
-  background-color: #30363d;
+  background-color: rgba(255, 255, 255, 0.08);
 }
 html[data-theme="dark"] #post figure.highlight .fold-toggle,
 html[data-theme="dark"] #raw-markdown-block figure.highlight .fold-toggle {
